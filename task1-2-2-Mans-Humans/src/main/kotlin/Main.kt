@@ -6,9 +6,10 @@ fun main(args: Array<String>) {
     endword(3)
     endword(61)
     endword(95)
+    endword(101511)
 }
 
-fun endword(likes: Int) = if (likes % 10 == 1 && likes != 11) {
+fun endword(likes: Int) = if (likes % 10 == 1 && (likes.toString().takeLast(2)  != "11")) {
     println("Понравилось $likes человеку")
 } else {
     println("Понравилось $likes людям")
