@@ -7,9 +7,10 @@ fun main(args: Array<String>) {
     endword(61)
     endword(95)
 }
-fun endword(likes: Int) = if (likes%10 == 1 && likes!=11){
-println("Понравилось $likes человеку")
-} else{
+
+fun endword(likes: Int) = if (likes % 10 == 1 && likes != 11) {
+    println("Понравилось $likes человеку")
+} else {
     println("Понравилось $likes людям")
 }
 
