@@ -1,6 +1,7 @@
 fun main(args: Array<String>) {
     val sum = 20000
-    discont(sum, true)
+    val constClient = true
+    discont(sum, constClient)
 }
 
 fun discont(sum: Int, const: Boolean) {
