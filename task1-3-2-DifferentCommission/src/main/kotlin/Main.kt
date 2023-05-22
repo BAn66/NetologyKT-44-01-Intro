@@ -12,11 +12,11 @@ fun countCommission(account: String = "VK pay", beforePay: Int = 0, nowPay: Int)
     var commission = 0
     //when (account.toLowerCase()) { //систему можно указывать в любом регистре
     when {
-        account.equals(accountType.VKPAY.nameAcc, ignoreCase = true) && !isLimitForVKPay(beforePay, nowPay) -> commission = 0
-        account.equals(accountType.MASTERCARD.nameAcc, ignoreCase = true) && !isLimitForCardExceptVKPay(beforePay, nowPay) -> commission = commissionForMasterCardMaestro(beforePay, nowPay)
-        account.equals(accountType.MAESTRO.nameAcc, ignoreCase = true) && !isLimitForCardExceptVKPay(beforePay, nowPay) -> commission = commissionForMasterCardMaestro(beforePay, nowPay)
-        account.toLowerCase() == accountType.VISA.nameAcc.toLowerCase() && !isLimitForCardExceptVKPay(beforePay, nowPay) -> commission = commissionForVisaMir(nowPay)
-        account.toLowerCase() == accountType.MIR.nameAcc.toLowerCase() && !isLimitForCardExceptVKPay(beforePay, nowPay) -> commission = commissionForVisaMir(nowPay)
+        account.lowercase() == accountType.VKPAY.nameAcc && !isLimitForVKPay(beforePay, nowPay) -> commission = 0
+        account.lowercase() == accountType.MASTERCARD.nameAcc && !isLimitForCardExceptVKPay(beforePay, nowPay) -> commission = commissionForMasterCardMaestro(beforePay, nowPay)
+        account.lowercase() == accountType.MAESTRO.nameAcc && !isLimitForCardExceptVKPay(beforePay, nowPay) -> commission = commissionForMasterCardMaestro(beforePay, nowPay)
+        account.lowercase() == accountType.VISA.nameAcc && !isLimitForCardExceptVKPay(beforePay, nowPay) -> commission = commissionForVisaMir(nowPay)
+        account.lowercase() == accountType.MIR.nameAcc && !isLimitForCardExceptVKPay(beforePay, nowPay) -> commission = commissionForVisaMir(nowPay)
     }
     return commission}
 
